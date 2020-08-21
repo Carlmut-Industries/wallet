@@ -1,5 +1,3 @@
-use <fonts/EurostileExt-Bla.otf>
-
 $fn = 128;
 
 // Initials
