@@ -4,6 +4,6 @@ A modern credit card wallet with thick walls ensuring longevity of important car
 
 ![First rendering of Wallet](https://raw.githubusercontent.com/Carlmut-Industries/wallet/master/render1.png)
 
-## Depencies
+## Dependencies
 
 Requires the [BOSL library](https://github.com/revarbat/BOSL) to be installed.
