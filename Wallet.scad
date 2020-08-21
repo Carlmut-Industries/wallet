@@ -1,3 +1,6 @@
+include <BOSL/constants.scad>
+use <BOSL/shapes.scad>
+
 $fn = 128;
 
 // Initials
@@ -19,14 +22,14 @@ cheight = 7;
 
 difference() {
     // wallet walls
-    color("orange")
-    cube([cwidth + thickness * 2, clength + thickness * 2, cheight + thickness * 2], center = true);
+    cuboid([cwidth + thickness * 2, clength + thickness * 2, cheight + thickness * 2], chamfer=thickness, center = true);
     
     // wallet compartment, lengthened and offset
     translate([thickness / 2, 0, 0]) cube([cwidth + thickness, clength, cheight], center = true);
     
     // thumb hole?
-    translate([-cwidth / 2, 0, 0]) cylinder(d = 30, h = cheight + thickness * 2, center = true);
+    scale([0.5, 1, 1])
+    translate([-cwidth - thickness * 2, 0, 0]) cylinder(d = 30, h = cheight + thickness * 2, center = true);
 
     // Top text
     translate([-20, -20, cheight / 2 + thickness / 2]) {
@@ -36,7 +39,7 @@ difference() {
     }
 
     // Side text
-    translate([-cwidth/2, -clength/2 - thickness / 2, -thickness/2])
+    translate([-cwidth/2 + thickness, -clength/2 - thickness / 2, -thickness/2])
     rotate([90, 0, 0]) {
         linear_extrude(1) {
             text($text, size=thickness, font="Eurostile Extd:style=Black");
