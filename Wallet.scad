@@ -4,7 +4,6 @@ $fn = 128;
 $top = "J K A";
 
 // Text
-//$text = "+49 1520 9016176";
 $text = "CARLMUT INDUSTRIES";
 
 // wall thickness in mm
