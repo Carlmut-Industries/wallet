@@ -48,7 +48,7 @@ difference() {
 }
 
 // retainer
-translate([(cwidth + thickness) / 2 + wiggleroom, 0, 0]) {
+translate([cwidth / 2, 0, 0]) {
     translate([0, clength / 2, 0]) cylinder(r=wiggleroom, h=cheight, center=true);
     translate([0, -clength / 2, 0]) cylinder(r=wiggleroom, h=cheight, center=true);
 }
