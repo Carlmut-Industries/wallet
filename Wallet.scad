@@ -22,29 +22,25 @@ cheight = 7;
 
 difference() {
     // wallet walls
-    cuboid([cwidth + thickness * 2, clength + thickness * 2, cheight + thickness * 2], chamfer=thickness, center = true);
+    cuboid([cwidth + thickness * 2, clength + thickness * 2, cheight + thickness * 2], chamfer=thickness);
     
     // wallet compartment, lengthened and offset
     translate([thickness / 2, 0, 0]) cube([cwidth + thickness, clength, cheight], center = true);
     
-    // thumb hole?
-    scale([0.5, 1, 1])
-    translate([-cwidth - thickness * 2, 0, 0]) cylinder(d = 30, h = cheight + thickness * 2, center = true);
-
-    // Top text
-    translate([-20, -20, cheight / 2 + thickness / 2]) {
-        linear_extrude(1) {
-            text($top, size=12, font="Eurostile Extd:style=Black");
-        }
+    // top window
+    translate([0, 0, cheight - 2.5]) {
+        cube([cwidth / 1.2, clength / 1.2, 2], center = true);
     }
 
     // Side text
     translate([-cwidth/2 + thickness, -clength/2 - thickness / 2, -thickness/2])
     rotate([90, 0, 0]) {
         linear_extrude(1) {
-            text($text, size=thickness, font="Eurostile Extd:style=Black");
+            text($text, size=thickness, font=":style=Bold Italic");
         }
     }
+    
+    
 }
 
 // retainer
