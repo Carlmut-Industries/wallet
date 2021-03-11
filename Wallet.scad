@@ -3,9 +3,6 @@ use <BOSL/shapes.scad>
 
 $fn = 128;
 
-// Initials
-$top = "J K A";
-
 // Text
 $text = "CARLMUT INDUSTRIES";
 
