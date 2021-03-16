@@ -9,6 +9,8 @@ jobs:
         uses: actions/checkout@v2
       - name: OpenSCAD Compile
         uses: Carlmut-Industries/openscad-docker-action@main
+        with:
+          root_file: Wallet.scad
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
