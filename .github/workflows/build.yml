@@ -1,0 +1,16 @@
+name: Build STL
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: OpenSCAD Compile
+        uses: Carlmut-Industries/openscad-docker-action@main
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Compiled STL
+          path: output.stl
