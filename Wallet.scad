@@ -4,7 +4,7 @@ use <BOSL/shapes.scad>
 $fn = 128;
 
 // Text
-$text = "CARLMUT INDUSTRIES";
+$text = "Carlmut Industries™";
 
 // wall thickness in mm
 thickness = 2;
@@ -18,15 +18,20 @@ clength = 53.98 + wiggleroom;
 cheight = 7;
 
 difference() {
+    width = cwidth + thickness * 2;
+    length = clength + thickness * 2;
+    height = cheight + thickness * 2;
+    
+    
     // wallet walls
-    cuboid([cwidth + thickness * 2, clength + thickness * 2, cheight + thickness * 2], chamfer=thickness);
+    cuboid([width, length, height], chamfer=thickness);
     
     // wallet compartment, lengthened and offset
     translate([thickness / 2, 0, 0]) cube([cwidth + thickness, clength, cheight], center = true);
     
     // top window
     translate([0, 0, cheight - 2.5]) {
-        cube([cwidth / 1.2, clength / 1.2, 2], center = true);
+        cube([width - 10, length - 10, 2], center = true);
     }
 
     // Side text
